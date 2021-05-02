@@ -1,13 +1,17 @@
+import React, { Component } from 'react';
 import './App.css';
-import './raw';
-import NavBar from './jsx/navbar/navbar';
+import NavBar from './components/navbar/navbar';
+import Raw from './raw';
 
-function App() {
-  return (
-    <div className="App">
-      <NavBar />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <Raw />
+      </div>
+    );
+  }
 }
 
 export default App;

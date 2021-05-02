@@ -1,4 +1,7 @@
 import './navbar.css';
+import NavItem from './navitem';
+
+const navItemNames = ['Home', 'Works', 'About', 'Contact'];
 
 export default function navbar() {
   return (
@@ -6,10 +9,9 @@ export default function navbar() {
       <div className="navbar-container">
         <div className="navbar-brand">Chase</div>
         <ul className="navbar-nav">
-          <li className="nav-item">Home</li>
-          <li className="nav-item">Works</li>
-          <li className="nav-item">About</li>
-          <li className="nav-item">Contact</li>
+          {navItemNames.map((name) => (
+            <NavItem name={name} key={`nav${name}`} />
+          ))}
         </ul>
       </div>
     </div>

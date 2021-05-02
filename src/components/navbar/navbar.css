@@ -11,6 +11,7 @@
   padding-top: 20px;
 }
 .navbar-container {
+  user-select: none;
   width: 100%;
   padding-right: 10%;
   padding-left: 10%;
@@ -23,7 +24,7 @@
 }
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
+  padding-top: 5px;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
   font-size: 1.25rem;
@@ -33,14 +34,36 @@
 .navbar-nav {
   display: flex;
   padding-left: 0;
+  padding: 10px 0;
   margin-bottom: 0;
   list-style: none;
+  align-items: center;
+  justify-content: center;
 }
 .nav-item {
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top: 0;
-  padding-bottom: 0;
+  cursor: pointer;
+  margin-top: 0;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding: 5px 15px;
+  text-decoration: none;
+  color: black;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  z-index: 10000;
+}
+
+.nav-highlight {
+  transition: all 0.2s;
+  border-bottom: 2px solid white;
+  position: absolute;
+  top: 0;
+  background: white;
+  left: 0;
+  z-index: -1;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 1200px) {

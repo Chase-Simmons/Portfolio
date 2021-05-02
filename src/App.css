@@ -46,7 +46,7 @@ body {
 dl,
 ol,
 ul {
-  margin-top: 0;
+  margin-top: 0 !important;
   margin-bottom: 1rem;
   display: block;
   list-style-type: disc;
@@ -60,4 +60,8 @@ ul {
 li {
   display: list-item;
   text-align: -webkit-match-parent;
+}
+
+html {
+  background-color: #282c34;
 }
