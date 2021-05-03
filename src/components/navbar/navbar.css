@@ -88,3 +88,7 @@
     max-width: 540px;
   }
 }
+
+.navbar-brand-image {
+  filter: blur(0.5px);
+}

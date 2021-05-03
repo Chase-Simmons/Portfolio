@@ -1,6 +1,8 @@
 import './navbar.css';
 import NavItem from './navitem';
 
+import Brand from '../../assets/Cs.png';
+
 const navItemNames = ['Home', 'Works', 'About', 'Contact'];
 let onNavItem = false;
 
@@ -8,7 +10,9 @@ export default function navbar() {
   return (
     <div className="navbar">
       <div className="navbar-container">
-        <div className="navbar-brand">Chase</div>
+        <div className="navbar-brand">
+          <img className="navbar-brand-image" src={Brand} />
+        </div>
         <ul className="navbar-nav">
           {navItemNames.map((name) => (
             <NavItem

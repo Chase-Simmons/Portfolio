@@ -32,20 +32,16 @@ export default class NavItem extends Component {
       props.onNavItem(false);
 
       setTimeout(() => {
-        if (props.onNavItem() === false) {
-          if (isTransitioning === true) {
-            props.onNavItem(false);
-
-            highlight.style.cssText = oldLocation;
-            isTransitioning = false;
-          }
+        if (props.onNavItem() === false && isTransitioning === true) {
+          props.onNavItem(false);
+          isTransitioning = false;
+          highlight.style.cssText = oldLocation;
         }
       }, 1000);
     }
 
     function onMouseEnter(e) {
       const thisNode = Nodes[props.name];
-      // console.log(nodeChildren.filter((node) => node.innerHTML === props.name));
 
       if (isTransitioning !== true) {
         isTransitioning = true;

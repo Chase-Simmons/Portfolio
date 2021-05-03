@@ -2,6 +2,28 @@
   display: block;
   top: 0;
   left: 0;
-  z-index: 10000;
+  z-index: -1;
   height: 100vh;
+  background-color: rgb(35, 117, 189);
+}
+
+.particles-item {
+  float: left;
+  z-index: 0;
+  width: 50px;
+  height: 50px;
+  background-color: aliceblue;
+}
+
+.particle {
+  position: fixed;
+  top: 0;
+  background: #f8f8ff;
+  left: 0;
+  z-index: 2;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 5px;
+  height: 5px;
 }
