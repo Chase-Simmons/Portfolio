@@ -4,9 +4,12 @@ import highlight from './navhighlight';
 let isTransitioning;
 let oldLocation;
 
+const eachNode = {};
+
 export default class NavItem extends Component {
   componentDidMount() {
     const testNode = this._reactInternals.child.stateNode;
+    eachNode[testNode.innerHTML] = testNode;
     if (testNode.innerHTML !== 'Home') return;
     highlight.style.width = `${testNode.clientWidth}px`;
     highlight.style.height = `${testNode.clientHeight}px`;
@@ -15,6 +18,10 @@ export default class NavItem extends Component {
     }px)`;
   }
   render() {
+    window.addEventListener('resize', () => {
+      highlight.style.cssText = `transform: translate(${eachNode.Home.offsetLeft}px, ${eachNode.Home.offsetTop}px); width: ${eachNode.Home.clientWidth}px; height: ${eachNode.Home.clientHeight}px; `;
+    });
+
     const props = this.props;
 
     function onMouseLeave(e) {

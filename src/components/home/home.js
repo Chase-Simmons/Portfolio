@@ -12,7 +12,7 @@ export default class Home extends Component {
           <div className="home-align">
             <div className="home-left">
               <h1 className="home-intro">Hello, my name is Chase.</h1>
-              <h1 className="home-intro">I am a Software Engineer</h1>
+              <h1 className="home-intro">I am a Software Engineer.</h1>
             </div>
             <div className="home-right">
               <div className="home-image">
