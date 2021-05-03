@@ -2,6 +2,7 @@ import './navbar.css';
 import NavItem from './navitem';
 
 const navItemNames = ['Home', 'Works', 'About', 'Contact'];
+let onNavItem = false;
 
 export default function navbar() {
   return (
@@ -10,7 +11,15 @@ export default function navbar() {
         <div className="navbar-brand">Chase</div>
         <ul className="navbar-nav">
           {navItemNames.map((name) => (
-            <NavItem name={name} key={`nav${name}`} />
+            <NavItem
+              name={name}
+              key={`nav${name}`}
+              onNavItem={(bool) => {
+                if (bool === undefined) return onNavItem;
+                onNavItem = bool;
+                return onNavItem;
+              }}
+            />
           ))}
         </ul>
       </div>

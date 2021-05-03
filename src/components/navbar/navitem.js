@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
+import highlight from './navhighlight';
 
-const highlight = document.createElement('span');
-
-highlight.classList.add('nav-highlight');
-document.body.append(highlight);
-highlight.style.transform = `translate(5000px, 27px)`;
+let isTransitioning;
+let oldLocation;
 
 export default class NavItem extends Component {
   componentDidMount() {
     const testNode = this._reactInternals.child.stateNode;
     if (testNode.innerHTML !== 'Home') return;
-    console.log(testNode.innerHTML);
     highlight.style.width = `${testNode.clientWidth}px`;
     highlight.style.height = `${testNode.clientHeight}px`;
     highlight.style.transform = `translate(${testNode.offsetLeft}px, ${
@@ -19,6 +16,21 @@ export default class NavItem extends Component {
   }
   render() {
     const props = this.props;
+
+    function onMouseLeave(e) {
+      props.onNavItem(false);
+
+      setTimeout(() => {
+        if (props.onNavItem() === false) {
+          if (isTransitioning === true) {
+            props.onNavItem(false);
+
+            highlight.style.cssText = oldLocation;
+            isTransitioning = false;
+          }
+        }
+      }, 500);
+    }
 
     function onMouseEnter(e) {
       if (!e.relatedTarget.childNodes) return;
@@ -33,6 +45,11 @@ export default class NavItem extends Component {
 
       // console.log(nodeChildren.filter((node) => node.innerHTML === props.name));
 
+      if (isTransitioning !== true) {
+        isTransitioning = true;
+        oldLocation = highlight.style.cssText;
+      }
+
       const coords = {
         width: thisNode[0].clientWidth,
         height: thisNode[0].clientHeight,
@@ -43,10 +60,18 @@ export default class NavItem extends Component {
       highlight.style.width = `${coords.width}px`;
       highlight.style.height = `${coords.height}px`;
       highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+
+      setTimeout(() => {
+        props.onNavItem(true);
+      }, 5);
     }
 
     return (
-      <li className="nav-item" onMouseEnter={onMouseEnter}>
+      <li
+        className="nav-item"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         {this.props.name}
       </li>
     );
