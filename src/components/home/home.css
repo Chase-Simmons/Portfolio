@@ -55,4 +55,5 @@
   width: 75%;
   transform: rotate(5deg) scaleX(-1);
   filter: brightness(92%);
+  z-index: 2;
 }
