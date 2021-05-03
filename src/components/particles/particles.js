@@ -6,11 +6,11 @@
 // window.onload = function () {
 //   Particles.init({
 //     selector: '.particles',
-//     maxParticles: 150,
-//     speed: 0.4,
-//     color: '#FEFEFE',
-//     minDistance: 105,
-//     connectParticles: true,
+//     // maxParticles: 150,
+//     // speed: 0.4,
+//     // color: '#FEFEFE',
+//     // minDistance: 105,
+//     // connectParticles: true,
 //   });
 // };
 

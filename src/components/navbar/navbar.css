@@ -6,7 +6,7 @@
   justify-content: space-between;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: auto;
   z-index: 9999;
 }
@@ -23,6 +23,7 @@
   justify-content: space-between;
 }
 .navbar-brand {
+  color: #f8f8ff;
   display: inline-block;
   padding-top: 5px;
   padding-bottom: 0.3125rem;
@@ -30,6 +31,7 @@
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  font-weight: bold;
 }
 .navbar-nav {
   display: flex;
@@ -58,7 +60,7 @@
   transition: all 0.2s;
   border-bottom: 2px solid white;
   top: 0;
-  background: white;
+  background: #f8f8ff;
   left: 0;
   z-index: -1;
   border-radius: 20px;

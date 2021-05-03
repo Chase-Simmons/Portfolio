@@ -29,7 +29,7 @@ export default class NavItem extends Component {
             isTransitioning = false;
           }
         }
-      }, 500);
+      }, 1000);
     }
 
     function onMouseEnter(e) {

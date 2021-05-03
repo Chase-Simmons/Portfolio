@@ -73,4 +73,30 @@ body {
 .landing {
   margin-top: 100px;
   height: 100vh;
+  width: 100vw;
+}
+
+@media (min-width: 1200px) {
+  html {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    max-width: 960px;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    max-width: 720px;
+  }
+}
+@media (min-width: 576px) {
+  html {
+    max-width: 540px;
+  }
+}
+
+.fix-particle-margin {
+  margin-top: -100vh;
 }

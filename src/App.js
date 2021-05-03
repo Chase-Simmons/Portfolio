@@ -10,9 +10,9 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <div className="landing">
-          {/* <Particles /> */}
+          {/* <Particles />
+          <div className="fix-particle-margin"></div> */}
           <Home />
-          <div className="fix-particle-margin"></div>
         </div>
       </div>
     );
