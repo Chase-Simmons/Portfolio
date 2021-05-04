@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Selfie from '../../assets/me.png';
+import Background from '../../assets/background.jpg';
 
 import './home.css';
 
@@ -8,6 +9,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home">
+        <img className="home-background" src={Background} />
         <div className="home-container">
           <div className="home-align">
             <div className="home-left">

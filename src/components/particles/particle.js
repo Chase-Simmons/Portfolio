@@ -5,14 +5,14 @@ let totalParticles = 0;
 const config = {
   speed: 10,
   radius: 6,
-  amount: 40,
+  amount: 20,
 };
 
 function buildParticle() {
   const particle = document.createElement('span');
 
   particle.style.transition = `all ${config.speed}s linear`;
-  particle.style.width = `${config.radius}px`;
+  particle.style.width = `6vw`;
   particle.style.height = `${config.radius}px`;
   particle.classList.add('particle');
 
@@ -21,22 +21,16 @@ function buildParticle() {
       particle
     );
 
-    particle.style.transform = `translate(53.7vw, 19.85vh)`;
+    particle.style.transform = `translate(10vw, 4.3vh)`;
 
     function translate() {
       setTimeout(() => {
-        particle.style.transform = `translate(96.5vw, 24.7vh)`;
+        particle.style.transform = `translate(90vw, 4.3vh)`;
         setTimeout(() => {
-          particle.style.transform = `translate(93.3vw, 72.5vh)`;
+          particle.style.transform = `translate(10vw, 4.3vh)`;
           setTimeout(() => {
-            particle.style.transform = `translate(50.2vw, 67.7vh)`;
-            setTimeout(() => {
-              particle.style.transform = `translate(53.7vw, 19.85vh)`;
-              setTimeout(() => {
-                translate();
-              }, 1000 * config.speed - 100);
-            }, 1000 * config.speed);
-          }, 1000 * config.speed);
+            translate();
+          }, 1000 * config.speed - 100);
         }, 1000 * config.speed);
       }, 100);
     }

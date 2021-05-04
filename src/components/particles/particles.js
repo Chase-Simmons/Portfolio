@@ -14,7 +14,6 @@ export default class Particles extends Component {
     return (
       <div className="particles">
         <ParticlesItem />
-        <ParticlesItem />
       </div>
     );
   }
