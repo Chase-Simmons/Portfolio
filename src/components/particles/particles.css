@@ -4,7 +4,7 @@
   left: 0;
   z-index: -1;
   height: 100vh;
-  background-color: rgb(35, 117, 189);
+  /* background-color: rgb(35, 117, 189); */
 }
 
 .particles-item {
@@ -16,14 +16,15 @@
 }
 
 .particle {
-  position: fixed;
+  position: absolute;
   top: 0;
   background: #f8f8ff;
   left: 0;
-  z-index: 2;
+  z-index: 0;
   border-radius: 50%;
   display: block;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 5px;
   height: 5px;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
