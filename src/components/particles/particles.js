@@ -11,10 +11,6 @@ export default class Particles extends Component {
   }
   render() {
     console.log(particlesParentNode);
-    return (
-      <div className="particles">
-        <ParticlesItem />
-      </div>
-    );
+    return <div className="particles">{/* <ParticlesItem /> */}</div>;
   }
 }

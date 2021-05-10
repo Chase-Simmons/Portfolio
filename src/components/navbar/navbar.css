@@ -49,10 +49,10 @@
   margin-left: 15px;
   padding: 5px 15px;
   text-decoration: none;
-  color: black;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   z-index: 10000;
+  font-weight: bold;
 }
 
 .nav-highlight {

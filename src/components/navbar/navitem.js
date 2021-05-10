@@ -7,6 +7,8 @@ let oldLocation;
 const Nodes = {};
 
 export default class NavItem extends Component {
+  textColor = '#111118';
+
   componentDidMount() {
     const testNode = this._reactInternals.child.stateNode;
     Nodes[testNode.innerHTML] = testNode;
@@ -69,6 +71,7 @@ export default class NavItem extends Component {
         className="nav-item"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
+        style={{ color: this.textColor }}
       >
         {this.props.name}
       </li>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import particle from './particle';
+// import particle from './particle';
 
 const allParticles = {};
 let particleCount = 0;
