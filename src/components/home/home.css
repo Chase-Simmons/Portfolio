@@ -4,11 +4,14 @@
 }
 .home-background {
   position: absolute;
+  max-height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
   z-index: -5;
   filter: brightness(30%);
   opacity: 30%;
+  border-bottom: 2px solid #f8f8ff;
 }
 .home-container {
   height: 40%;
