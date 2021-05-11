@@ -5,11 +5,12 @@ import Background from '../../assets/background.jpg';
 
 import './home.css';
 
+const particles = [];
+
 export default class Home extends Component {
   render() {
     return (
       <div className="home">
-        <img className="home-background" src={Background} />
         <div className="home-container">
           <div className="home-align">
             <div className="home-left">
@@ -18,10 +19,11 @@ export default class Home extends Component {
             </div>
             <div className="home-right">
               <div className="home-image">
-                <img src={Selfie} alt="image" className="home-selfie" />
+                <img src={Selfie} alt="home" className="home-selfie" />
               </div>
             </div>
           </div>
+          <div className="home-fix" />
         </div>
       </div>
     );

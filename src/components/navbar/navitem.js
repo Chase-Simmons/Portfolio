@@ -30,7 +30,7 @@ export default class NavItem extends Component {
 
     const props = this.props;
 
-    function onMouseLeave(e) {
+    function onMouseLeave() {
       props.onNavItem(false);
 
       setTimeout(() => {
@@ -42,9 +42,7 @@ export default class NavItem extends Component {
       }, 1000);
     }
 
-    function onMouseEnter(e) {
-      const thisNode = Nodes[props.name];
-
+    function onMouseEnter() {
       if (isTransitioning !== true) {
         isTransitioning = true;
         oldLocation = highlight.style.cssText;
@@ -66,11 +64,27 @@ export default class NavItem extends Component {
       }, 5);
     }
 
+    function onClick() {
+      const coords = {
+        width: Nodes[props.name].clientWidth,
+        height: Nodes[props.name].clientHeight,
+        top: Nodes[props.name].offsetTop - 1,
+        left: Nodes[props.name].offsetLeft,
+      };
+
+      highlight.style.width = `${coords.width}px`;
+      highlight.style.height = `${coords.height}px`;
+      highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+
+      oldLocation = highlight.style.cssText;
+    }
+
     return (
       <li
         className="nav-item"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
+        onClick={onClick}
         style={{ color: this.textColor }}
       >
         {this.props.name}
