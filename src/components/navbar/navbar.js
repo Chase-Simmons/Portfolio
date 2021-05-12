@@ -7,6 +7,18 @@ const navItemNames = ['Home', 'Works', 'About', 'Contact'];
 let onNavItem = false;
 
 export default function navbar() {
+  const Nodes = {};
+  let selectedTab;
+
+  function updateNodes(node, data) {
+    Nodes[node] = data;
+  }
+
+  function getNode(node) {
+    return Nodes[node];
+  }
+
+  const functions = { updateNodes, getNode };
   return (
     <div className="navbar">
       <div className="navbar-container">
@@ -16,6 +28,7 @@ export default function navbar() {
         <ul className="navbar-nav">
           {navItemNames.map((name) => (
             <NavItem
+              functions={functions}
               name={name}
               key={`nav${name}`}
               onNavItem={(bool) => {
