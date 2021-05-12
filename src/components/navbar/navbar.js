@@ -1,23 +1,36 @@
-import './navbar.css';
 import NavItem from './navitem';
-
+import highlight from './navhighlight';
 import Brand from '../../assets/Cs.png';
+
+import './navbar.css';
 
 const navItemNames = ['Home', 'Works', 'About', 'Contact'];
 let onNavItem = false;
 
-export default function navbar() {
-  const Nodes = {};
-  let selectedTab;
+const Nodes = {};
+let selectedTab;
 
+export default function navbar() {
   function updateNodes(node, data) {
-    console.log('setting data');
     Nodes[node] = data;
+    console.log('setting data', Nodes);
   }
 
   function getNode(node) {
     return Nodes[node];
   }
+
+  function selectTab(selection) {
+    selectedTab = selection;
+  }
+
+  window.addEventListener('resize', () => {
+    highlight.style.cssText = `transform: translate(${
+      Nodes[selectedTab].offsetLeft
+    }px, ${Nodes[selectedTab].offsetTop - 1}px); width: ${
+      Nodes[selectedTab].clientWidth
+    }px; height: ${Nodes[selectedTab].clientHeight}px; `;
+  });
 
   return (
     <div className="navbar">
@@ -34,6 +47,9 @@ export default function navbar() {
                 },
                 getNode: (node) => {
                   getNode(node);
+                },
+                selectTab: (selection) => {
+                  selectTab(selection);
                 },
               }}
               name={name}

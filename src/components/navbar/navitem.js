@@ -10,10 +10,8 @@ export default class NavItem extends Component {
   textColor = '#111118';
 
   componentDidMount() {
-    console.log(this.props);
-    this.props.functions.updateNodes();
     const testNode = this._reactInternals.child.stateNode;
-    // this.props.updateNodes(this.props.name, testNode);
+    this.props.functions.updateNodes(this.props.name, testNode);
     Nodes[testNode.innerHTML] = testNode;
     if (testNode.innerHTML !== 'Home') return;
     highlight.style.width = `${testNode.clientWidth}px`;
@@ -23,16 +21,7 @@ export default class NavItem extends Component {
     }px)`;
   }
   render() {
-    window.addEventListener('resize', () => {
-      highlight.style.cssText = `transform: translate(${
-        Nodes.Home.offsetLeft
-      }px, ${Nodes.Home.offsetTop - 1}px); width: ${
-        Nodes.Home.clientWidth
-      }px; height: ${Nodes.Home.clientHeight}px; `;
-    });
-
     const props = this.props;
-
     function onMouseLeave() {
       props.onNavItem(false);
 
@@ -68,6 +57,7 @@ export default class NavItem extends Component {
     }
 
     function onClick() {
+      props.functions.selectTab(props.name);
       const coords = {
         width: Nodes[props.name].clientWidth,
         height: Nodes[props.name].clientHeight,
