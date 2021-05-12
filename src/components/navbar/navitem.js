@@ -10,7 +10,10 @@ export default class NavItem extends Component {
   textColor = '#111118';
 
   componentDidMount() {
+    console.log(this.props);
+    this.props.functions.updateNodes();
     const testNode = this._reactInternals.child.stateNode;
+    // this.props.updateNodes(this.props.name, testNode);
     Nodes[testNode.innerHTML] = testNode;
     if (testNode.innerHTML !== 'Home') return;
     highlight.style.width = `${testNode.clientWidth}px`;

@@ -11,6 +11,7 @@ export default function navbar() {
   let selectedTab;
 
   function updateNodes(node, data) {
+    console.log('setting data');
     Nodes[node] = data;
   }
 
@@ -18,7 +19,6 @@ export default function navbar() {
     return Nodes[node];
   }
 
-  const functions = { updateNodes, getNode };
   return (
     <div className="navbar">
       <div className="navbar-container">
@@ -28,7 +28,14 @@ export default function navbar() {
         <ul className="navbar-nav">
           {navItemNames.map((name) => (
             <NavItem
-              functions={functions}
+              functions={{
+                updateNodes: (node, data) => {
+                  updateNodes(node, data);
+                },
+                getNode: (node) => {
+                  getNode(node);
+                },
+              }}
               name={name}
               key={`nav${name}`}
               onNavItem={(bool) => {
