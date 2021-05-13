@@ -4,24 +4,16 @@ import highlight from './navhighlight';
 let isTransitioning;
 let oldLocation;
 
-const Nodes = {};
-
 export default class NavItem extends Component {
   textColor = '#111118';
 
   componentDidMount() {
-    const testNode = this._reactInternals.child.stateNode;
-    this.props.functions.updateNodes(this.props.name, testNode);
-    Nodes[testNode.innerHTML] = testNode;
-    if (testNode.innerHTML !== 'Home') return;
-    highlight.style.width = `${testNode.clientWidth}px`;
-    highlight.style.height = `${testNode.clientHeight}px`;
-    highlight.style.transform = `translate(${testNode.offsetLeft}px, ${
-      testNode.offsetTop - 1
-    }px)`;
+    let thisNode = this._reactInternals.child.stateNode;
+    this.props.functions.updateNodes(this.props.name, thisNode);
   }
   render() {
     const props = this.props;
+
     function onMouseLeave() {
       props.onNavItem(false);
 
@@ -41,10 +33,10 @@ export default class NavItem extends Component {
       }
 
       const coords = {
-        width: Nodes[props.name].clientWidth,
-        height: Nodes[props.name].clientHeight,
-        top: Nodes[props.name].offsetTop - 1,
-        left: Nodes[props.name].offsetLeft,
+        width: props.Nodes[props.name].clientWidth,
+        height: props.Nodes[props.name].clientHeight,
+        top: props.Nodes[props.name].offsetTop - 1,
+        left: props.Nodes[props.name].offsetLeft,
       };
 
       highlight.style.width = `${coords.width}px`;
@@ -59,10 +51,10 @@ export default class NavItem extends Component {
     function onClick() {
       props.functions.selectTab(props.name);
       const coords = {
-        width: Nodes[props.name].clientWidth,
-        height: Nodes[props.name].clientHeight,
-        top: Nodes[props.name].offsetTop - 1,
-        left: Nodes[props.name].offsetLeft,
+        width: props.Nodes[props.name].clientWidth,
+        height: props.Nodes[props.name].clientHeight,
+        top: props.Nodes[props.name].offsetTop - 1,
+        left: props.Nodes[props.name].offsetLeft,
       };
 
       highlight.style.width = `${coords.width}px`;

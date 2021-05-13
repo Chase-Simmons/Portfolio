@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
 import Selfie from '../../assets/me.png';
-import Background from '../../assets/background.jpg';
 
 import './home.css';
-
-const particles = [];
 
 export default class Home extends Component {
   render() {

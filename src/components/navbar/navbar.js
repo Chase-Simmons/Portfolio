@@ -13,7 +13,9 @@ let selectedTab;
 export default function navbar() {
   function updateNodes(node, data) {
     Nodes[node] = data;
-    console.log('setting data', Nodes);
+    if (node === 'Home') {
+      onLoadHome();
+    }
   }
 
   function getNode(node) {
@@ -22,6 +24,14 @@ export default function navbar() {
 
   function selectTab(selection) {
     selectedTab = selection;
+  }
+
+  function onLoadHome() {
+    highlight.style.width = `${Nodes.Home.clientWidth}px`;
+    highlight.style.height = `${Nodes.Home.clientHeight}px`;
+    highlight.style.transform = `translate(${Nodes.Home.offsetLeft}px, ${
+      Nodes.Home.offsetTop - 1
+    }px)`;
   }
 
   window.addEventListener('resize', () => {
@@ -52,6 +62,7 @@ export default function navbar() {
                   selectTab(selection);
                 },
               }}
+              Nodes={Nodes}
               name={name}
               key={`nav${name}`}
               onNavItem={(bool) => {
