@@ -7,11 +7,14 @@ import './home.css';
 export default class Home extends Component {
   componentDidMount() {
     setTimeout(() => {
-      console.log(this._reactInternals.child.stateNode.offsetHeight);
-      navCoords.Works = this._reactInternals.child.stateNode.offsetHeight;
+      this.updateCoords();
     }, 500);
   }
+  updateCoords = () => {
+    navCoords.Works = this._reactInternals.child.stateNode.offsetHeight;
+  };
   render() {
+    window.addEventListener('resize', this.updateCoords);
     return (
       <div className="home">
         <div className="home-container">

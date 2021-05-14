@@ -8,7 +8,7 @@ const navItemNames = ['Home', 'Works', 'About', 'Contact'];
 let onNavItem = false;
 
 const Nodes = {};
-let selectedTab;
+let selectedTab = 'Home';
 
 export default function navbar() {
   function updateNodes(node, data) {
