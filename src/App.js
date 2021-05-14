@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/navbar/navbar';
 import Home from './components/home/home';
 import Works from './components/works/works';
+import About from './components/about/about';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <div className="landing">
           <Home />
           <Works />
+          <About />
         </div>
       </div>
     );

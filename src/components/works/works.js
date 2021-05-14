@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-
-import Selfie from '../../assets/me.png';
-import Background from '../../assets/background.jpg';
+import navCoords from '../navbar/navcoords';
 
 import './works.css';
 
 export default class Home extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      this.updateCoords();
+    }, 500);
+  }
+  updateCoords = () => {
+    navCoords.About =
+      this._reactInternals.child.stateNode.offsetHeight + navCoords.Works;
+  };
   render() {
+    window.addEventListener('resize', this.updateCoords);
     return (
       <div className="works">
         <div className="works-container">

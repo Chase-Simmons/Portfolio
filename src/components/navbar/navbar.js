@@ -1,5 +1,6 @@
 import NavItem from './navitem';
 import highlight from './navhighlight';
+import navCoords from './navcoords';
 import Brand from '../../assets/Cs.png';
 
 import './navbar.css';
@@ -34,14 +35,33 @@ export default function navbar() {
     }px)`;
   }
 
-  window.addEventListener('resize', () => {
+  function moveSelectedTab() {
     highlight.style.cssText = `transform: translate(${
       Nodes[selectedTab].offsetLeft
     }px, ${Nodes[selectedTab].offsetTop - 1}px); width: ${
       Nodes[selectedTab].clientWidth
     }px; height: ${Nodes[selectedTab].clientHeight}px; `;
-  });
+  }
+  window.addEventListener('resize', moveSelectedTab);
 
+  window.addEventListener('scroll', () => {
+    if (
+      window.scrollY < navCoords.About * 2 &&
+      window.scrollY > navCoords.Works * 1.2
+    ) {
+      selectedTab = 'About';
+      moveSelectedTab();
+    } else if (
+      window.scrollY < navCoords.Works * 1.2 &&
+      window.scrollY > navCoords.Works / 2.2
+    ) {
+      selectedTab = 'Works';
+      moveSelectedTab();
+    } else {
+      selectedTab = 'Home';
+      moveSelectedTab();
+    }
+  });
   return (
     <div className="navbar">
       <div className="navbar-container">

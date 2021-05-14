@@ -48,22 +48,22 @@
 }
 .works-display-knob {
   margin: 0 2%;
-  width: 5%;
-  height: 50%;
+  width: 30px;
+  height: 30px;
   background-color: #f8f8ff;
   border-radius: 50%;
 }
 .works-display-next-left {
   margin: 0 2%;
-  width: 5%;
-  height: 50%;
+  width: 30px;
+  height: 30px;
   background-color: #f8f8ff50;
   border-radius: 50%;
 }
 .works-display-next-right {
   margin: 0 2%;
-  width: 5%;
-  height: 50%;
+  width: 30px;
+  height: 30px;
   background-color: #f8f8ff50;
   border-radius: 50%;
 }
