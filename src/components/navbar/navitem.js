@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import highlight from './navhighlight';
+import navCoords from './navcoords';
 
 let isTransitioning;
 let oldLocation;
@@ -49,6 +50,7 @@ export default class NavItem extends Component {
     }
 
     function onClick() {
+      window.scroll(0, navCoords[props.name]);
       props.functions.selectTab(props.name);
       const coords = {
         width: props.Nodes[props.name].clientWidth,

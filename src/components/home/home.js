@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-
+import navCoords from '../navbar/navcoords';
 import Selfie from '../../assets/me.png';
 
 import './home.css';
 
 export default class Home extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      console.log(this._reactInternals.child.stateNode.offsetHeight);
+      navCoords.Works = this._reactInternals.child.stateNode.offsetHeight;
+    }, 500);
+  }
   render() {
     return (
       <div className="home">

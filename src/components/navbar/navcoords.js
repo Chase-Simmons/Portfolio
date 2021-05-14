@@ -1,8 +1,8 @@
-navCoords = {
-  Home: { x: 0, y: 0 },
-  Works: { x: 0, y: 0 },
-  About: { x: 0, y: 0 },
-  Contact: { x: 0, y: 0 },
+const navCoords = {
+  Home: 0,
+  Works: 0,
+  About: 0,
+  Contact: 0,
 };
 
 export default navCoords;
