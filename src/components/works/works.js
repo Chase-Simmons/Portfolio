@@ -11,7 +11,19 @@ export default class Home extends Component {
       <div className="works">
         <div className="works-container">
           <div className="works-align">
-            <div className="works-left"></div>
+            <div className="works-left">
+              <div className="works-display-container">
+                <div className="works-display"></div>
+                <div className="works-display-knob-container">
+                  <div className="works-display-next-left"></div>
+                  <div className="works-display-knob" />
+                  <div className="works-display-knob" />
+                  <div className="works-display-knob" />
+                  <div className="works-display-knob" />
+                  <div className="works-display-next-right"></div>
+                </div>
+              </div>
+            </div>
             <div className="works-right"></div>
           </div>
         </div>
