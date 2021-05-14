@@ -9,6 +9,12 @@ export default class Home extends Component {
   render() {
     return (
       <div className="works">
+        <div className="works-container">
+          <div className="works-align">
+            <div className="works-left"></div>
+            <div className="works-right"></div>
+          </div>
+        </div>
         {/* <svg className="works-svg">
           <path
             className="works-svg-path"
