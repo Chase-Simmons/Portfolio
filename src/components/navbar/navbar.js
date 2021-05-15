@@ -46,14 +46,14 @@ export default function navbar() {
 
   window.addEventListener('scroll', () => {
     if (
-      window.scrollY < navCoords.About * 2 &&
-      window.scrollY > navCoords.Works * 1.2
+      window.scrollY > navCoords.Works * 1.2 &&
+      window.scrollY < navCoords.About * 2
     ) {
       selectedTab = 'About';
       moveSelectedTab();
     } else if (
-      window.scrollY < navCoords.Works * 1.2 &&
-      window.scrollY > navCoords.Works / 2.2
+      window.scrollY > navCoords.Works / 2.2 &&
+      window.scrollY < navCoords.Works * 1.2
     ) {
       selectedTab = 'Works';
       moveSelectedTab();
@@ -66,7 +66,7 @@ export default function navbar() {
     <div className="navbar">
       <div className="navbar-container">
         <div className="navbar-brand">
-          <img className="navbar-brand-image" src={Brand} />
+          <img className="navbar-brand-image" src={Brand} alt="Branded-Name" />
         </div>
         <ul className="navbar-nav">
           {navItemNames.map((name) => (

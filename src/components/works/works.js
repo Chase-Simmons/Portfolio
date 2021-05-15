@@ -32,7 +32,12 @@ export default class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="works-right"></div>
+            <div className="works-right">
+              <div className="works-right-container">
+                <div className="works-title"></div>
+                <div className="works-description"></div>
+              </div>
+            </div>
           </div>
         </div>
         {/* <svg className="works-svg">
