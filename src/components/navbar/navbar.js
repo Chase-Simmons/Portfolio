@@ -47,7 +47,7 @@ export default function navbar() {
   window.addEventListener('scroll', () => {
     if (
       window.scrollY > navCoords.Works * 1.2 &&
-      window.scrollY < navCoords.About * 2
+      window.scrollY < navCoords.About
     ) {
       selectedTab = 'About';
       moveSelectedTab();
