@@ -60,12 +60,18 @@
   background-color: #f8f8ff50;
   border-radius: 50%;
 }
+.works-display-next-left:hover {
+  cursor: pointer;
+}
 .works-display-next-right {
   margin: 0 2%;
   width: 30px;
   height: 30px;
   background-color: #f8f8ff50;
   border-radius: 50%;
+}
+.works-display-next-right:hover {
+  cursor: pointer;
 }
 .works-spacing {
   height: 100%;
@@ -81,4 +87,17 @@
   height: 100%;
   background-color: #444448a0;
   border-radius: 5px;
+}
+.works-title-container {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.works-title {
+  color: #f8f8ff;
+  font-weight: bold;
+  font-size: 2.5vw;
+  text-decoration: underline #f8f8ff20 2px;
 }

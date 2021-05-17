@@ -6,6 +6,10 @@ import worksDetails from './worksdetails';
 import './works.css';
 
 export default class Home extends Component {
+  state = {
+    display: 0,
+  };
+
   componentDidMount() {
     setTimeout(() => {
       this.updateCoords();
@@ -37,8 +41,16 @@ export default class Home extends Component {
             <div className="works-spacing" />
             <div className="works-right">
               <div className="works-right-container">
-                <div className="works-title"></div>
-                <div className="works-description"></div>
+                <div className="works-title-container">
+                  <p className="works-title">
+                    {worksDetails[this.state.display].title}
+                  </p>
+                </div>
+                <div className="works-description-container">
+                  <p className="works-description">
+                    {worksDetails[this.state.display].description}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
