@@ -34,6 +34,7 @@ export default class Home extends Component {
                 </div>
               </div>
             </div>
+            <div className="works-spacing" />
             <div className="works-right">
               <div className="works-right-container">
                 <div className="works-title"></div>
