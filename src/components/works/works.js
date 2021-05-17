@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
-import navCoords from '../navbar/navcoords';
+import worksDetails from './worksdetails';
 
 import './works.css';
 
 export default class Home extends Component {
-  componentDidMount() {
-    setTimeout(() => {
-      this.updateCoords();
-    }, 500);
-  }
-  updateCoords = () => {
-    navCoords.About =
-      this._reactInternals.child.stateNode.offsetHeight + navCoords.Works;
-  };
   render() {
-    window.addEventListener('resize', this.updateCoords);
     return (
       <div className="works">
         <div className="works-container">
