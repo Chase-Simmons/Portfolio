@@ -114,4 +114,5 @@
   font-weight: bold;
   font-size: 1.25vw;
   padding: 0 5%;
+  overflow: hidden;
 }
