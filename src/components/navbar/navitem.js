@@ -50,7 +50,11 @@ export default class NavItem extends Component {
     }
 
     function onClick() {
-      window.scroll(0, navCoords[props.name]);
+      window.scrollTo({
+        left: 0,
+        top: navCoords[props.name],
+        behavior: 'smooth',
+      });
       props.functions.selectTab(props.name);
       const coords = {
         width: props.Nodes[props.name].clientWidth,
