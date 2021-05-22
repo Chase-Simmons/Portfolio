@@ -19,6 +19,22 @@ export default class Home extends Component {
     navCoords.About =
       this._reactInternals.child.stateNode.offsetHeight + navCoords.Works;
   };
+  onClickLeft = () => {
+    let setDisplay = this.state.display;
+    setDisplay--;
+    if (setDisplay < 0) {
+      setDisplay = worksDetails.length - 1;
+    }
+    this.setState({ display: setDisplay });
+  };
+  onClickRight = () => {
+    let setDisplay = this.state.display;
+    setDisplay++;
+    if (setDisplay > worksDetails.length - 1) {
+      setDisplay = 0;
+    }
+    this.setState({ display: setDisplay });
+  };
   render() {
     window.addEventListener('resize', this.updateCoords);
     return (
@@ -29,12 +45,18 @@ export default class Home extends Component {
               <div className="works-display-container">
                 <div className="works-display"></div>
                 <div className="works-display-knob-container">
-                  <div className="works-display-next-left"></div>
+                  <div
+                    className="works-display-next-left"
+                    onClick={this.onClickLeft}
+                  ></div>
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
-                  <div className="works-display-next-right"></div>
+                  <div
+                    className="works-display-next-right"
+                    onClick={this.onClickRight}
+                  ></div>
                 </div>
               </div>
             </div>

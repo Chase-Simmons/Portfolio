@@ -55,6 +55,7 @@ export default class NavItem extends Component {
         top: navCoords[props.name],
         behavior: 'smooth',
       });
+
       props.functions.selectTab(props.name);
       const coords = {
         width: props.Nodes[props.name].clientWidth,
