@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import navCoords from '../navbar/navcoords';
-
 import worksDetails from './worksdetails';
+
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import './works.css';
 
@@ -45,18 +47,20 @@ export default class Home extends Component {
               <div className="works-display-container">
                 <div className="works-display"></div>
                 <div className="works-display-knob-container">
-                  <div
+                  <ArrowBackIosIcon
                     className="works-display-next-left"
                     onClick={this.onClickLeft}
-                  ></div>
+                    style={{ color: '#f8f8ff', fontSize: 25 }}
+                  />
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
-                  <div
+                  <ArrowForwardIosIcon
                     className="works-display-next-right"
                     onClick={this.onClickRight}
-                  ></div>
+                    style={{ color: '#f8f8ff', fontSize: 25 }}
+                  />
                 </div>
               </div>
             </div>
