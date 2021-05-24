@@ -10,6 +10,8 @@ import './works.css';
 export default class Home extends Component {
   state = {
     display: 0,
+    left: '#f8f8ff',
+    right: '#f8f8ff',
   };
 
   componentDidMount() {
@@ -37,6 +39,7 @@ export default class Home extends Component {
     }
     this.setState({ display: setDisplay });
   };
+
   render() {
     window.addEventListener('resize', this.updateCoords);
     return (
@@ -47,20 +50,38 @@ export default class Home extends Component {
               <div className="works-display-container">
                 <div className="works-display"></div>
                 <div className="works-display-knob-container">
-                  <ArrowBackIosIcon
-                    className="works-display-next-left"
-                    onClick={this.onClickLeft}
-                    style={{ color: '#f8f8ff', fontSize: 25 }}
-                  />
+                  <div
+                    onMouseEnter={() => {
+                      this.setState({ ...this.state, left: '#5a78b2' });
+                    }}
+                    onMouseLeave={() => {
+                      this.setState({ ...this.state, left: '#f8f8ff' });
+                    }}
+                  >
+                    <ArrowBackIosIcon
+                      className="works-display-next-left"
+                      onClick={this.onClickLeft}
+                      style={{ color: this.state.left, fontSize: 25 }}
+                    />
+                  </div>
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
                   <div className="works-display-knob" />
-                  <ArrowForwardIosIcon
-                    className="works-display-next-right"
-                    onClick={this.onClickRight}
-                    style={{ color: '#f8f8ff', fontSize: 25 }}
-                  />
+                  <div
+                    onMouseEnter={() => {
+                      this.setState({ ...this.state, right: '#5a78b2' });
+                    }}
+                    onMouseLeave={() => {
+                      this.setState({ ...this.state, right: '#f8f8ff' });
+                    }}
+                  >
+                    <ArrowForwardIosIcon
+                      className="works-display-next-right"
+                      onClick={this.onClickRight}
+                      style={{ color: this.state.right, fontSize: 25 }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
