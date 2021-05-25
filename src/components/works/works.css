@@ -37,6 +37,7 @@
   height: 90%;
   border-bottom: 1px solid #f8f8ff;
   /* border: 3px solid #f8f8ff; */
+  overflow: hidden;
 }
 .works-display-knob-container {
   width: 100%;
@@ -109,4 +110,9 @@
   font-size: 1.25vw;
   padding: 0 5%;
   overflow: hidden;
+}
+.works-display-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

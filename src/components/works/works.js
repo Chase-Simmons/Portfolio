@@ -5,11 +5,15 @@ import worksDetails from './worksdetails';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
+import Necromancy from '../../assets/wizon.jpg';
+
 import './works.css';
+
+const displayArray = ['', Necromancy, ''];
 
 export default class Home extends Component {
   state = {
-    display: 0,
+    display: 1,
     left: '#f8f8ff',
     right: '#f8f8ff',
   };
@@ -48,7 +52,13 @@ export default class Home extends Component {
           <div className="works-align">
             <div className="works-left">
               <div className="works-display-container">
-                <div className="works-display"></div>
+                <div className="works-display">
+                  <img
+                    src={displayArray[this.state.display]}
+                    alt={worksDetails[this.state.display].title}
+                    className="works-display-img"
+                  />
+                </div>
                 <div className="works-display-knob-container">
                   <div
                     onMouseEnter={() => {
