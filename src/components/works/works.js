@@ -6,14 +6,16 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import Necromancy from '../../assets/wizon.jpg';
+import WiFind from '../../assets/wifind.png';
+import ConnectHer from '../../assets/connectHer.png';
 
 import './works.css';
 
-const displayArray = ['', Necromancy, ''];
+const displayArray = [ConnectHer, Necromancy, WiFind];
 
 export default class Home extends Component {
   state = {
-    display: 1,
+    display: 0,
     left: '#f8f8ff',
     right: '#f8f8ff',
   };
@@ -46,6 +48,16 @@ export default class Home extends Component {
 
   render() {
     window.addEventListener('resize', this.updateCoords);
+    // const renderKnobs = () => {
+    //   return (
+    //     <>
+    //       {' '}
+    //       {displayArray.forEach((item) => {
+    //         return <div className="works-display-knob" />;
+    //       })}
+    //     </>
+    //   );
+    // };
     return (
       <div className="works">
         <div className="works-container">
@@ -74,10 +86,16 @@ export default class Home extends Component {
                       style={{ color: this.state.left, fontSize: 25 }}
                     />
                   </div>
-                  <div className="works-display-knob" />
-                  <div className="works-display-knob" />
-                  <div className="works-display-knob" />
-                  <div className="works-display-knob" />
+                  {displayArray.map((item, key) => {
+                    return this.state.display === key ? (
+                      <div
+                        className="works-display-knob"
+                        style={{ backgroundColor: '#f8f8ff80' }}
+                      />
+                    ) : (
+                      <div className="works-display-knob" />
+                    );
+                  })}
                   <div
                     onMouseEnter={() => {
                       this.setState({ ...this.state, right: '#5a78b2' });
