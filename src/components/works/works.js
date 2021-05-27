@@ -48,16 +48,6 @@ export default class Home extends Component {
 
   render() {
     window.addEventListener('resize', this.updateCoords);
-    // const renderKnobs = () => {
-    //   return (
-    //     <>
-    //       {' '}
-    //       {displayArray.forEach((item) => {
-    //         return <div className="works-display-knob" />;
-    //       })}
-    //     </>
-    //   );
-    // };
     return (
       <div className="works">
         <div className="works-container">
